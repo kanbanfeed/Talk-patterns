@@ -1,65 +1,77 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className="container">
+
+      <section>
+        <h1>Talk patterns don’t change randomly.<br />They change when power does.</h1>
+        <p>A private collection of the exact sentences people use<br />when they’ve decided you’re losing.</p>
+        <a href="/checkout"><button>Read the sentences →</button></a>
+      </section>
+
+      <section>
+        <h2>If this sounds familiar, this is for you.</h2>
+        <ul>
+          <li>You apologized — and it got worse</li>
+          <li>You admitted you were struggling — and they pulled away</li>
+          <li>The conversation stopped being about facts and became about you</li>
+          <li>The same lines keep appearing, no matter who you’re talking to</li>
+        </ul>
+        <p>This isn’t coincidence.<br />It’s a script.</p>
+      </section>
+
+      <section>
+        <h2>This is not advice. Not therapy. Not blame.</h2>
+        <p>This is a list.<br />Nothing more.<br />Nothing less.</p>
+        <p>The sentences people say when:</p>
+        <ul>
+          <li>they’ve lost respect</li>
+          <li>they feel superior</li>
+          <li>they want control without confrontation</li>
+        </ul>
+        <p>No names.<br />No stories.<br />No interpretation in the first layer.<br />Just the words.</p>
+      </section>
+
+      <section>
+        <h2>You’ll read 50 real sentences, grouped by situation.</h2>
+        <ul>
+          <li>When you admit you’re struggling</li>
+          <li>When you apologize</li>
+          <li>When you ask for time</li>
+          <li>When you’re sick or exhausted</li>
+          <li>When you try to repair</li>
+          <li>When they withdraw empathy</li>
+        </ul>
+        <p>Most people recognize at least one immediately.</p>
+      </section>
+
+      <section>
+        <p>Quietly shared among founders, professionals, and people<br />who can’t afford to say the wrong thing one more time.</p>
+      </section>
+
+      <section>
+        <a href="/checkout"><button>Read the sentences now ($7)</button></a>
+        <p>Instant access. No account required.</p>
+      </section>
+
+      <footer>
+        <p><b>
+          DISCLAIMER</b><br />
+          The content sold on this website consists solely of textual material presented without interpretation or instruction.
+        </p>
+
+        <ul>
+          <li>No outcomes are promised</li>
+          <li>No behavioral changes are guaranteed</li>
+          <li>No psychological, emotional, or relational claims are made</li>
+        </ul>
+
+        <p>The material is descriptive, not prescriptive.</p>
+        <p>Reading the content does not imply endorsement of any viewpoint or action.</p>
+
+        <p>Content is informational text only and not advice or professional services. No outcomes are guaranteed. Digital access is for personal use; all sales are final. Use of this site constitutes acceptance of the Terms and Privacy Policy.</p>
+        <b><a href="/terms">Terms</a> | <a href="/privacy">Privacy</a></b>
+      </footer>
+
+    </main>
   );
 }
