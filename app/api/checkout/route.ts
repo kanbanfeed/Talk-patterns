@@ -4,6 +4,8 @@ import { NextResponse } from "next/server";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
 
 export async function POST() {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
+
   const session = await stripe.checkout.sessions.create({
     mode: "payment",
     line_items: [
@@ -16,8 +18,8 @@ export async function POST() {
         quantity: 1,
       },
     ],
-    success_url: "http://localhost:3000/upsell-1?product=7",
-    cancel_url: "http://localhost:3000/checkout",
+    success_url: `${baseUrl}/upsell-1?product=7`,
+    cancel_url: `${baseUrl}/checkout`,
   });
 
   return NextResponse.json({ url: session.url });
