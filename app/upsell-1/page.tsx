@@ -1,10 +1,19 @@
 "use client";
 
+import { useSearchParams } from "next/navigation";
+
 export default function Upsell1() {
+  const searchParams = useSearchParams();
+  const product = searchParams.get("product") || "7";
+
   const handleUpsell = async () => {
     const res = await fetch("/api/upsell1", { method: "POST" });
     const data = await res.json();
     window.location.href = data.url;
+  };
+
+  const handleSkip = () => {
+    window.location.href = `/thank-you?product=${product}`;
   };
 
   return (
@@ -16,10 +25,7 @@ export default function Upsell1() {
         you’ll want to know what it was really doing.
       </p>
 
-      <p>
-        Each sentence is decoded:
-      </p>
-
+      <p>Each sentence is decoded:</p>
       <ul>
         <li>the hidden intent</li>
         <li>why it hits so hard</li>
@@ -35,8 +41,11 @@ export default function Upsell1() {
       </ul>
 
       <button onClick={handleUpsell}>Add decoding ($29)</button>
+
       <br /><br />
-      <a href="/upsell-2">Skip — I only want the sentences</a>
+
+      <button onClick={handleSkip}>Skip</button>
+      <p>No, continue without this. You will be redirected to the document access section.</p>
     </main>
   );
 }

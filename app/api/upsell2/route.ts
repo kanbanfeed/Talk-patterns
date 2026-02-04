@@ -16,8 +16,8 @@ export async function POST() {
         quantity: 1,
       },
     ],
-    success_url: "https://talk-patterns.vercel.app/thank-you",
-    cancel_url: "https://talk-patterns.vercel.app/thank-you",
+    success_url: "http://localhost:3000/thank-you?product=99",
+    cancel_url: "http://localhost:3000/thank-you?product=29",
   });
 
   return NextResponse.json({ url: session.url });

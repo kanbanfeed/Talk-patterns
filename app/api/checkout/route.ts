@@ -16,8 +16,8 @@ export async function POST() {
         quantity: 1,
       },
     ],
-    success_url: "https://talk-patterns.vercel.app/upsell-1",
-    cancel_url: "https://talk-patterns.vercel.app/checkout",
+    success_url: "http://localhost:3000/upsell-1?product=7",
+    cancel_url: "http://localhost:3000/checkout",
   });
 
   return NextResponse.json({ url: session.url });

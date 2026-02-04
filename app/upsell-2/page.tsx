@@ -1,10 +1,19 @@
 "use client";
 
+import { useSearchParams } from "next/navigation";
+
 export default function Upsell2() {
+  const searchParams = useSearchParams();
+  const product = searchParams.get("product") || "29";
+
   const handleUpsell = async () => {
     const res = await fetch("/api/upsell2", { method: "POST" });
     const data = await res.json();
     window.location.href = data.url;
+  };
+
+  const handleSkip = () => {
+    window.location.href = `/thank-you?product=${product}`;
   };
 
   return (
@@ -16,10 +25,7 @@ export default function Upsell2() {
         to say the wrong thing again.
       </p>
 
-      <p>
-        For each category, you get:
-      </p>
-
+      <p>For each category, you get:</p>
       <ul>
         <li>what NOT to say</li>
         <li>one neutral response</li>
@@ -40,8 +46,11 @@ export default function Upsell2() {
       </ul>
 
       <button onClick={handleUpsell}>Add countermoves ($99)</button>
+
       <br /><br />
-      <a href="/thank-you">Skip — I’ll figure it out myself</a>
+
+      <button onClick={handleSkip}>Skip</button>
+      <p>No, continue without this. You will be redirected to the document access section.</p>
     </main>
   );
 }
